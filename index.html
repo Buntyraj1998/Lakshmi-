@@ -7,8 +7,10 @@
     body {
       font-family: 'Segoe UI', sans-serif;
       text-align: center;
-      background-image: url('https://i.ibb.co/3r7jGmH/floral-bg.jpg');
+      background-image: url('https://i.ibb.co/QF8Cj6x/lotus-bg-light.png');
       background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
       background-position: center;
       padding: 30px;
       color: #4e003e;
@@ -17,15 +19,14 @@
     .container {
       background-color: rgba(255, 255, 255, 0.85);
       padding: 30px;
-      border: 5px solid #f8bbd0;
       border-radius: 20px;
       max-width: 600px;
       margin: 0 auto;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     }
 
-    .question {
-      margin-bottom: 20px;
+    h2 {
+      color: #880e4f;
     }
 
     input[type="text"] {
@@ -63,37 +64,22 @@
       justify-content: center;
       gap: 20px;
     }
-
-    h2 {
-      color: #880e4f;
-    }
-
-    .floral-border {
-      border: 10px double #f06292;
-      border-radius: 30px;
-      padding: 10px;
-      background-image: url('https://i.ibb.co/Dk2Nvq7/floral-corner.png');
-      background-repeat: no-repeat;
-      background-position: top left, bottom right;
-      background-size: 80px 80px;
-    }
-
   </style>
 </head>
 <body>
 
-  <div class="container floral-border">
-    <h2>🌷 Answer 3 questions to unlock your surprise 🎁</h2>
+  <div class="container">
+    <h2>🌸 Answer 3 questions to unlock your surprise 🎁</h2>
 
-    <div class="question">
+    <div>
       <input type="text" id="q1" placeholder="1. Favourite place in Tamil Nadu?">
     </div>
 
-    <div class="question">
+    <div>
       <input type="text" id="q2" placeholder="2. Dish you want Neeraj to cook?">
     </div>
 
-    <div class="question">
+    <div>
       <p>3. Which one do you prefer?</p>
       <div class="radio-group">
         <label><input type="radio" name="q3" value="Handbag"> Handbag</label>
@@ -136,13 +122,13 @@
         body: formData
       });
 
-      // Play audio on button click
+      // Play blessing music
       const audio = document.getElementById("blessing-audio");
       audio.play().catch(err => {
         console.log("Audio play error:", err);
       });
 
-      // Countdown to open surprise
+      // Countdown logic
       let count = 3;
       const timerEl = document.getElementById("timer");
       document.getElementById("countdown").style.display = "block";
